@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --color-curr: currentColor;
+
+  --color-white: #e2e2e2;
+  --color-black: #242424;
+  --color-purple: #3f3cbb;
+  --color-midnight: #121063;
+  --color-obsidian: #26233d;
+  --color-metal: #565584;
+  --color-silver: #ecebff;
+  --color-bubble-gum: #ff77e9;
+  --color-bermuda: #78dcca;
+  --color-tahiti-100: #cffafe;
+  --color-tahiti-200: #a5f3fc;
+  --color-tahiti-300: #67e8f9;
+  --color-tahiti-400: #22d3ee;
+  --color-tahiti-500: #06b6d4;
+  --color-tahiti-600: #0891b2;
+  --color-tahiti-700: #0e7490;
+  --color-tahiti-800: #155e75;
+  --color-tahiti-900: #164e63;
+  --color-heather-50: #f5f5f9;
+  --color-heather-100: #e7e7f2;
+  --color-heather-200: #d5d5e8;
+  --color-heather-300: #b8b9d8;
+  --color-heather-400: #9596c5;
+  --color-heather-500: #7f7cb5;
+  --color-heather-600: #716aa6;
+  --color-heather-700: #60578c;
+  --color-heather-800: #58507d;
+  --color-heather-900: #494365;
+  --color-heather-950: #302c3f;
+  --shadow-lg-top: 0 -10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl-top: 0 -20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl-top: 0 -25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+:root {
+  --col: rgb(32, 122, 145);
+  --accent: navy;
+  font-family: "Gabarito Variable", system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: center;
+
+  color-scheme: light dark;
+  color: theme(--color-white);
+  background-color: theme(--color-black);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+#root {
+  min-width: 100%;
+}
