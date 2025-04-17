@@ -1,5 +1,5 @@
 export interface TaskObj {
-  text: string;
+  text: string | undefined;
   color: Color;
   id: string;
 }
@@ -14,5 +14,6 @@ export interface ListObj {
 type RGB = `rgb(${number}, ${number}, ${number})`;
 type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`;
 type HEX = `#${string}`;
+export type MODE = "display" | "new" | "edit";
 
 export type Color = RGB | RGBA | HEX;
