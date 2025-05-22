@@ -8,7 +8,17 @@ export interface ListObj {
   title: string;
   color: Color;
   id: string;
-  tasks: TaskObj[];
+  tasks: tasksDataObj;
+}
+
+// Object where each key is the id for a task
+export interface tasksDataObj {
+  [idKey: string]: TaskObj;
+}
+
+// Object where each key is the id for a list
+export interface ListsDataObj {
+  [idKey: string]: ListObj;
 }
 
 type RGB = `rgb(${number}, ${number}, ${number})`;

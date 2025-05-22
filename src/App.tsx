@@ -5,9 +5,19 @@ import { Footer } from "./components/staples/Footer";
 import { WideButton } from "./components/staples/IconButton";
 import { FaRegSquarePlus } from "react-icons/fa6";
 import { RiEdit2Fill } from "react-icons/ri";
-import { randomList } from "./scripts";
+import { createList, useLists } from "./scripts";
+import { ListObj } from "./types";
 
 function App() {
+  const { lists, setLists } = useLists();
+  const handleNewList = () => {
+    const newList = createList("New List");
+    const newId = newList.id;
+    setLists({ ...lists, [newId]: newList });
+  };
+  const handleEdit = (editedList: ListObj) => {
+    setLists({ ...lists, [editedList.id]: editedList });
+  };
   return (
     <>
       <header className="pt-8">
@@ -18,6 +28,7 @@ function App() {
           icon={<BsClipboardPlusFill />}
           label="New List"
           showLabel={true}
+          onClick={handleNewList}
         />
         <WideButton
           icon={<FaRegSquarePlus />}
@@ -27,8 +38,10 @@ function App() {
         <WideButton icon={<RiEdit2Fill />} label="Edit" showLabel={true} />
       </menu>
 
-      <div className="p-8">
-        <Todo />
+      <div className="p-8 flex flex-wrap gap-8 flex-col ">
+        {Object.values(lists).map((list) => (
+          <List info={list} updateInfo={handleEdit} key={list.id} />
+        ))}
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
@@ -39,10 +52,6 @@ function App() {
       <Footer />
     </>
   );
-}
-
-function Todo() {
-  return <List info={randomList()} />;
 }
 
 export default App;
